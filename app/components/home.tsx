@@ -9,7 +9,7 @@ export default function Landing() {
       {/* Hero Section */}
       <section className="text-center py-20">
         <h1 className="text-5xl font-bold text-white mb-4">
-          Can't sleep?
+          Can&apos;t sleep?
         </h1>
         <p className="text-xl text-white mb-8">
           Feel free to try out this website with 10+ ready presets or play something custom for yourself :p
@@ -37,7 +37,6 @@ export default function Landing() {
               </p>
             </div>
             <div className="text-center">
-              <Image className="h-12 w-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">
                 Custom Images
               </h3>

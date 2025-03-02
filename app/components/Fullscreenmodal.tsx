@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { PlayCircle, PauseCircle, X, Waves } from 'lucide-react';
 import Image from 'next/image';
 
 type FullscreenModalProps = {
@@ -73,11 +72,11 @@ export default function FullscreenModal({ imageUrl, audioUrl, onClose }: Fullscr
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-black">
       {/* Close Button */}
       <button onClick={onClose} className="absolute top-4 right-4 text-white">
-        <X size={32} />
+        <Image src="/icons/close.svg" alt='close' width={32} height={32} />
       </button>
 
       {/* Background Image */}
-      <img src={imageUrl} alt="Fullscreen" className="w-full h-full object-cover absolute inset-0" />
+      <Image src={imageUrl} alt="Fullscreen" className="w-full h-full object-cover absolute inset-0" />
 
       {/* Audio Element */}
       <audio ref={audioRef} src={audioUrl} loop />

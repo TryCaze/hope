@@ -34,7 +34,7 @@ const Footer = () => {
     target="_blank" 
     className="inline-block"
   >
-    <img 
+    <Image
       src="https://liberapay.com/assets/widgets/donate.svg" 
       alt="Buy Me A Coffee" 
       style={{ width: '180px', height: 'auto' }} // Resize but keep aspect ratio
