@@ -17,56 +17,51 @@ export default function FullscreenModal({ imageUrl, audioUrl, onClose }: Fullscr
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      audio.volume = volume;
-      isPlaying ? audio.play() : audio.pause();
-    }
-  }, [isPlaying, volume]);
-
-  useEffect(() => {
     if (!showVisualizer) return;
-
+  
     const audio = audioRef.current;
     if (!audio) return;
-
+  
     const canvas = canvasRef.current;
     if (!canvas) return;
-
+  
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-
-    const audioContext = new AudioContext(); // ✅ Use AudioContext directly
+  
+    const audioContext = new AudioContext();
     const analyser = audioContext.createAnalyser();
     const source = audioContext.createMediaElementSource(audio);
     source.connect(analyser);
     analyser.connect(audioContext.destination);
     analyser.fftSize = 256;
-
+  
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
-
-    function draw() {
-      if (!canvas || !ctx) return; // ✅ Check for null
-
+  
+    const draw = () => {
+      if (!canvas || !ctx) return;
       requestAnimationFrame(draw);
       analyser.getByteFrequencyData(dataArray);
-
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
       const barWidth = (canvas.width / bufferLength) * 2.5;
       let barHeight;
       let x = 0;
-
+  
       for (let i = 0; i < bufferLength; i++) {
         barHeight = dataArray[i] / 2;
-        ctx.fillStyle = `rgb(${50 + i * 2}, 0, ${150 + i})`; // Blue & purple colors
+        ctx.fillStyle = `rgb(${50 + i * 2}, 0, ${150 + i})`;
         ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
         x += barWidth + 1;
       }
-    }
-
-    draw();
+    };
+  
+    draw();  
+    return () => {
+      audioContext.close();
+    };
   }, [showVisualizer]);
+  
 
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-black">

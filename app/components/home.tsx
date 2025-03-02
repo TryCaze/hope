@@ -1,4 +1,4 @@
-import { Headphones, Image, Upload } from 'lucide-react';
+import { Headphones, Upload } from 'lucide-react';
 import Button from './button';
 
 export default function Landing() {
