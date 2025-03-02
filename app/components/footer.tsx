@@ -11,16 +11,16 @@ const Footer = () => {
   </div>
   <div className="flex justify-center items-center">
     <a href="https://www.youtube.com/channel/UCICryVYQ_DfYHtulmoUAv3A" className="mx-5">
-        <Image src="/icons/youtube.svg" alt="youtube" width={24} height={24}/>
+        <Image src="/youtube.svg" alt="youtube" width={24} height={24}/>
     </a>
     <a href="https://www.instagram.com/trycaze/" className="mx-5">
-        <Image src="/icons/instagram.svg" alt="instagram" width={24} height={24}/>
+        <Image src="/instagram.svg" alt="instagram" width={24} height={24}/>
     </a>
     <a href="https://bsky.app/profile/did:plc:ortwnym66v3s7gzkl4gritxf" className="mx-5">
-        <Image src="/icons/bluesky.svg" alt="bluesky" width={24} height={24}/>
+        <Image src="/bluesky.svg" alt="bluesky" width={24} height={24}/>
     </a>
     <a href="https://github.com/TryCaze" className="mx-5">
-        <Image src="/icons/github.svg" alt="github" width={24} height={24}/>
+        <Image src="/github.svg" alt="github" width={24} height={24}/>
     </a>
   </div>
 </div>
@@ -35,9 +35,10 @@ const Footer = () => {
     className="inline-block"
   >
     <Image
-      src="https://liberapay.com/assets/widgets/donate.svg" 
-      alt="Buy Me A Coffee" 
-      style={{ width: '180px', height: 'auto' }} // Resize but keep aspect ratio
+      src="/liberapay.png" 
+      alt="Donate!" 
+      width={128}
+      height={128}
     />
   </a>
 </div>

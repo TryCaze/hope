@@ -13,9 +13,9 @@ type GridItem = {
 };
 
 const items: GridItem[] = [
-  { id: 1, title: 'Ocean', imageUrl: '/images/ocean.jpg', audioUrl: '/sounds/ocean.mp3' },
-  { id: 2, title: 'Forest', imageUrl: '/images/forest.jpg', audioUrl: '/sounds/forest.mp3' },
-  { id: 3, title: 'Rain', imageUrl: '/images/rain.jpg', audioUrl: '/sounds/rain.mp3' },
+  { id: 1, title: 'Ocean', imageUrl: '/ocean.jpg', audioUrl: '/ocean.mp3' },
+  { id: 2, title: 'Forest', imageUrl: '/forest.jpg', audioUrl: '/forest.mp3' },
+  { id: 3, title: 'Rain', imageUrl: '/rain.jpg', audioUrl: '/rain.mp3' },
 ];
 
 export default function Presets() {
